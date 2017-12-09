@@ -1,0 +1,34 @@
+/* Palette */
+.blog{
+    background-color:lightgray;
+    width:70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    color:black;
+    font-weight: 300;
+}
+
+.blog h2{
+    margin-bottom: 50px;
+}
+
+.blog h2, p{
+    text-align: center;
+}
+
+/* Nav Bar */
+.nav-bar{
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+
+    background-color: lightgray;
+}
+
+.nav-item{
+    margin-left: 20px;
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bold;
+}

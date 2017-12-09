@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/help', function(){
+    return view('help');
+});
+/*
+Route::get('User/login', function(){
+    return view('login');
+});
+Route::post('User/login', 'UserController/login');*/
 
 Route::get('/add-item', function () {
     return view('welcome');
