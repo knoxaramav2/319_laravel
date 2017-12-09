@@ -13,6 +13,7 @@ class TableRow extends Component {
     let uri = `http://localhost:8000/items/${this.props.obj.id}`;
     axios.delete(uri);
     browserHistory.push('/display-item');
+	location.reload();
   }
   render() {
     return (

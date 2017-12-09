@@ -59549,6 +59549,7 @@ var TableRow = function (_Component) {
       var uri = 'http://localhost:8000/items/' + this.props.obj.id;
       axios.delete(uri);
       __WEBPACK_IMPORTED_MODULE_1_react_router__["browserHistory"].push('/display-item');
+      location.reload();
     }
   }, {
     key: 'render',
