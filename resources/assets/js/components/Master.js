@@ -13,9 +13,9 @@ class Master extends Component {
               <a className="navbar-brand" href="#">Go Fish!</a>
             </div>
             <ul className="nav navbar-nav">
-              <li className="active"><a href="#">Home</a></li>
-              <li><a href="/add-item">Page 1</a></li>
-              <li><a href="#">Page 2</a></li>
+              <li className="active"><a href="/">Home</a></li>
+              <li><a href="/add-item">Create Item</a></li>
+              <li><a href="/display-item">Display Item</a></li>
               <li><a href="#">Page 3</a></li>
             </ul>
           </div>

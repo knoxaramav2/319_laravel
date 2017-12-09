@@ -15,4 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/add-item', function () {
+    return view('welcome');
+});
+
+Route::get('/display-item', function () {
+    return view('welcome');
+});
+
 Route::resource('items', 'ItemController');
