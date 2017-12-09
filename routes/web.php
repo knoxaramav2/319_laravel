@@ -18,11 +18,9 @@ Route::get('/', function () {
 Route::get('/help', function(){
     return view('help');
 });
-/*
-Route::get('User/login', function(){
-    return view('login');
-});
-Route::post('User/login', 'UserController/login');*/
+
+Route::get('/login', 'UserController@loginView');
+Route::post('/login', 'UserController@loginAs');
 
 Route::get('/add-item', function () {
     return view('welcome');

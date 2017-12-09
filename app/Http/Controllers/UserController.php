@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Session;
+use Auth;
+use Validator;
+use Illuminate\Support\Facades\Input;
+use Redirect;
 
 class UserController extends Controller
 {
@@ -82,7 +88,14 @@ class UserController extends Controller
         //
     }
 
-    public function login(){
-        
+    public function loginView(){
+
+        //Get user
+
+        return view('login');
+    }
+
+    public function loginAs($request){
+        return view('welcome');
     }
 }

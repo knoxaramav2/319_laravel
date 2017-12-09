@@ -12,8 +12,17 @@
     </head>
     <body>
         @include('partials/header')
-        <div id="example"></div>
         <script src="{{asset('js/app.js')}}" ></script>
+
+        @if(isset($user))
+
+        <a>Logout</a>
+
+        @else
+
+        TODO: Login form, Signup form
+
+        @endif
 		
     </body>
 </html>
