@@ -51,3 +51,38 @@ form{
     color: darkblue;
     font-weight: bold;
 }
+
+/* Profile */
+.profile_bg{
+    background-color: darkgray;
+    min-width: 300px;
+    padding: 5px;
+    margin: 5px;
+    padding-bottom: 80px;
+}
+
+.profile_stats{
+    border-top: 1px solid lightgray;
+}
+
+.profile_stats div{
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.profile_bg h1{
+    margin-bottom: 30px;
+}
+
+.game_list{
+
+}
+
+.game_list_item th,td{
+    min-width: 100px;
+    text-align: center;
+}
+
+#game_form{
+    display:flex;
+}

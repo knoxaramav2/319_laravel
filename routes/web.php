@@ -18,7 +18,7 @@ Route::resource('games', 'GameController');
 
 Route::get('/', function () {
     
-    return view('welcome', ['username' => 'test']);//Session()->get('username')]);
+    return view('welcome', ['username' => Session()->get('username')]);//Session()->get('username')]);
 });
 
 Route::get('/help', function(){

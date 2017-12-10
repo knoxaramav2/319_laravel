@@ -6,6 +6,9 @@
 
 <div id='nav-bar' class='nav-bar'>
     <div class='nav-item'>
+        <a href='/'>Home</a>
+    </div>
+    <div class='nav-item'>
         <a href='/login'>Login/Signup</a>
     </div>
     @if(isset($username))
@@ -19,6 +22,7 @@
     <div class='nav-item'>
         <a href='/help'>Help</a>
     </div>
+    TODO Use this views/partials/header partial from react
 </div>
 
 <script>

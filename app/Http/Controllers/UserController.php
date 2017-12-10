@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
+use App\Game;
+
+use Illuminate\Http\Request;
 use Session;
 use Auth;
 use Validator;
@@ -134,8 +136,10 @@ class UserController extends Controller
 
     public function profile(){
         $user = User::where('name', '=', Session()->get('username'))->first();
+        $games = Game::where('host_id', '=', $user->name)->get();
+        $invites = array();
 
-        return view('profile')->with(compact('user'));
+        return view('profile', ['games' => $games, 'invites' => $invites])->with(compact('user'));
     }
 
     public function loginView(){
@@ -172,8 +176,6 @@ class UserController extends Controller
         }
 
         Session::put('username', $user->name);
-
-        //user Hash::make('<password>') when verifying password in database
 
         return redirect()->intended('/');
     }
