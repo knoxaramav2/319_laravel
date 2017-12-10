@@ -11,16 +11,26 @@
 |
 */
 
+//use Session;
+
+Route::resource('users', 'UserController');
+Route::resource('games', 'GameController');
+
 Route::get('/', function () {
-    return view('welcome');
+    
+    return view('welcome', ['username' => 'test']);//Session()->get('username')]);
 });
 
 Route::get('/help', function(){
-    return view('help');
+    return view('help', ['username' => Session()->get('username')]);
 });
 
 Route::get('/login', 'UserController@loginView');
 Route::post('/login', 'UserController@loginAs');
+
+Route::get('/logout', 'UserController@logout');
+Route::get('/profile', 'UserController@profile');
+
 
 Route::get('/add-item', function () {
     return view('welcome');

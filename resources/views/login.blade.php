@@ -11,6 +11,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
+
+        @foreach($errors->all() as $error)
+            <div class='error'>
+            {{$error}}
+            </div>
+        @endforeach
+
         @include('partials/header')
         <script src="{{asset('js/app.js')}}" ></script>
 
@@ -24,7 +31,7 @@
 		<form method="post" action="/login">
 			{{ csrf_field() }}
 			<label>Username</label>
-			<input type="text" placeholder="Enter Username" id="username" name="username">
+			<input type="text" placeholder="Enter Username" id="username" name="name">
 			<br/>
 			<label>Password</label>
 			<input type="password" placeholder="Enter password" id="password" name="password">
@@ -51,8 +58,8 @@
                     <input type="password" id="password" name='password'></input>
                 </div>
                 <div>
-                    <label for="confirm_password">Confirm Password</label>
-                    <input type="password" id="confirm_password" name='confirm_password'></input>
+                    <label for="password_confirmation">Confirm Password</label>
+                    <input type="password" id="password_confirmation" name='password_confirmation'></input>
                 </div>
                 <div>
                     <label for="email">Email Address</label>

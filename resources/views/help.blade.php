@@ -19,7 +19,7 @@
             <p>A simple browser version of the game Go Fish.</p>
             <p>
                 Similar to the original card game, the rules are simple:
-                Two players are given a hand of 7 cards from a standard playing
+                Two players are given a hand of 5 cards from a standard playing
                 card deck. With each turn, players attempt to complete a set of 
                 four of a kind set of a particular card in order to earn a point. 
             </p>

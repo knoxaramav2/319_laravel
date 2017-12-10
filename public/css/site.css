@@ -17,6 +17,11 @@
     text-align: center;
 }
 
+.error{
+    font-weight: bold;
+    color:red;
+}
+
 /*spacing*/
 .spacer{
     margin: 50px 5px;

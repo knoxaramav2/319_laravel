@@ -9,6 +9,8 @@ use Auth;
 use Validator;
 use Illuminate\Support\Facades\Input;
 use Redirect;
+use Hash;
+use Log;
 
 class UserController extends Controller
 {
@@ -40,7 +42,49 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Session::flush();
+        //validate
+        $validate_rules = array(
+            'name' => 'required|unique:users',
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required',
+            'email' => 'required|email|unique:users,email'
+        );
+
+        $messages = array(
+            'required' => 'Please fill in the :attribute field',
+            'num' => 'The :attribute field must contain only letters and numbers',
+            'unique' => 'A user already exists with the given :attribute',
+            'confirm' => 'Passwords do not match'
+        );
+
+        $validator = Validator::make(Input::all(), $validate_rules, $messages);
+
+        if ($validator->fails()){
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+
+        $user = User::where('email', '=', $request->get('email'))->first();
+        if ($user !== null){
+            return view('welcome', ['name' => $user->name]);
+        }
+
+        User::create([
+            'name' => $request->get('name'),
+            'password' => Hash::make($request->get('password')),
+            'email' => $request->get('email')
+        ]);
+
+        $user = User::where('name', '=', $request->get('name'))->first();
+
+        if(isset($user) === false){
+            return view('error', ['err_msg' => 'An error occurred while creating your profile']);
+        }
+
+        Session::put('username', $user->name);
+
+        Session::flash('flash_message', 'User Added');
+        return view('/welcome')->with(compact('user'));
     }
 
     /**
@@ -88,6 +132,12 @@ class UserController extends Controller
         //
     }
 
+    public function profile(){
+        $user = User::where('name', '=', Session()->get('username'))->first();
+
+        return view('profile')->with(compact('user'));
+    }
+
     public function loginView(){
 
         //Get user
@@ -95,7 +145,41 @@ class UserController extends Controller
         return view('login');
     }
 
-    public function loginAs($request){
+    public function loginAs(){
+
+        Session::flush();
+
+        //validate
+        $validate_rules = array(
+            'name' => 'required',
+            'password' => 'required'
+        );
+
+        $messages = array(
+            'required' => 'Please fill in the :attribute field',
+        );
+
+        $validator = Validator::make(Input::all(), $validate_rules, $messages);
+
+        if ($validator->fails()){
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+
+        $user = User::where('name', '=', Input::get('name'))->first();
+
+        if (Hash::check(Input::get('password'), $user->password)){
+            return view('error', ['err_msg' => 'Password does not match user']);
+        }
+
+        Session::put('username', $user->name);
+
+        //user Hash::make('<password>') when verifying password in database
+
+        return redirect()->intended('/');
+    }
+
+    public function logout(){
+        Session::flush();
         return view('welcome');
     }
 }
