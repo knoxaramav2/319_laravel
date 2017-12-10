@@ -17,6 +17,20 @@
     text-align: center;
 }
 
+/*spacing*/
+.spacer{
+    margin: 50px 5px;
+
+    border-bottom: 2px solid darkgray;
+}
+
+form{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+
 /* Nav Bar */
 .nav-bar{
     display: flex;

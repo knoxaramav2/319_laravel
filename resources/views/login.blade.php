@@ -19,8 +19,6 @@
         <a>Logout</a>
 
         @else
-
-        TODO: Login form, Signup form
 		
 		<h3>Login</h3>
 		<form method="post" action="/login">
@@ -33,10 +31,45 @@
 			<br/><br/>
 			<input type="button" value="Cancel" name="cancel" id="cancel" OnClick="location.href='/'">
 			<input type="submit" value="Login" name="login" id="login">
+        </form>
+        <!--
 			<br/><br/>
 			<input type="button" value="Register Here" name="register" id="register" OnClick="location.href='/register'">
+        -->
+
+            <div class='spacer'></div>
+
+            <h2>Create an account</h2>
+
+            <form method="POST" action="users">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name='name'></input>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name='password'></input>
+                </div>
+                <div>
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name='confirm_password'></input>
+                </div>
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="text" id="email" name='email'></input>
+                </div>
+                <div>
+                    <div>
+                        <input type="submit" value="Sign Up"></input>
+                    </div>
+                </div>
+                    
+                {{csrf_field()}}
+            </form>
 
         @endif
+
+        
 		
     </body>
 </html>
