@@ -6,24 +6,34 @@ import { Router, Route, Link } from 'react-router';
 class Master extends Component {
   render(){
     return (
-      <div className="container">
-        <nav className="navbar navbar-default">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <a className="navbar-brand" href="#">Go Fish!</a>
-            </div>
-            <ul className="nav navbar-nav">
-              <li className="active"><a href="/">Home</a></li>
-              <li><a href="/add-item">Create Item</a></li>
-              <li><a href="/display-item">Display Item</a></li>
-              <li><a href="#">Page 3</a></li>
-            </ul>
-          </div>
-      </nav>
-          <div>
-              {this.props.children}
-          </div>
+	
+    <div className="container">
+	  
+	<div id='nav-bar' className='nav-bar'>
+	  <div className='nav-item'>
+	    <a href="/">Home</a>
+	  </div>
+	  <div className='nav-item'>
+		<a href='/login'>Login/Signup</a>
+	  </div>
+	  <div className='nav-item'>
+		  <a href='/profile'>Profile</a>
+	  </div>
+	  <div className='nav-item'>
+		<a href='/help'>Help</a>
+	  </div>
+	  <div className='nav-item'>
+		<a href="/add-item">Create Item</a>
+	  </div>
+	  <div className='nav-item'>
+		<a href="/display-item">Display Item</a>
+	  </div>
+	</div>
+	  
+      <div>
+        {this.props.children}
       </div>
+    </div>
     )
   }
 }

@@ -21,6 +21,20 @@
         @else
 
         TODO: Login form, Signup form
+		
+		<h3>Login</h3>
+		<form method="post" action="/login">
+			{{ csrf_field() }}
+			<label>Username</label>
+			<input type="text" placeholder="Enter Username" id="username" name="username">
+			<br/>
+			<label>Password</label>
+			<input type="password" placeholder="Enter password" id="password" name="password">
+			<br/><br/>
+			<input type="button" value="Cancel" name="cancel" id="cancel" OnClick="location.href='/'">
+			<input type="submit" value="Login" name="login" id="login">
+			<br/><br/>
+			<input type="button" value="Register Here" name="register" id="register" OnClick="location.href='/register'">
 
         @endif
 		
