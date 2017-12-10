@@ -16,6 +16,7 @@
 
         <div class='profile_bg'>
             <h1>{{$user->name}}'s Profile</h1>
+            
             <div class='profile_stats'>
                 <div>
                     <span>Joined: {{date('m-d-Y', strtotime($user->created_at))}}</span>
@@ -30,12 +31,18 @@
                     <span>Wins: {{$user->wins}}</span>
                 </div>
                 <div>
-                    <span>Wins: {{$user->losses}}</span>
+                    <span>Losses: {{$user->losses}}</span>
                 </div>
             </div>
             <div>
                 <h3>Manage Games</h3>
             </div>
+            @foreach($errors->all() as $error)
+            <div class='error'>
+                {{$error}}
+            </div>
+            @endforeach
+
             <table class='game_list'>
                 <tr class='game_list_item'>
                     <th>Game</th>

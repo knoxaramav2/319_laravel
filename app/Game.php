@@ -15,6 +15,6 @@ class Game extends Model
          * @var array
          */
         protected $fillable = [
-            'host_id', 'client_id', 'started', 'completed', 'winner'
+            'host_id', 'client_id', 'started', 'completed', 'winner', 'client_accepted'
         ];
 }
