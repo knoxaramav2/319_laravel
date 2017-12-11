@@ -15,8 +15,6 @@
 
 use Mail\WelcomeLetter;
 
-Route::resource('users', 'UserController');
-Route::resource('games', 'GameController');
 
 Route::get('/', function () {
     return view('welcome', ['username' => Session()->get('username')]);
@@ -59,5 +57,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('items', 'ItemController');
+Route::resource('users', 'UserController');
+Route::resource('games', 'GameController');
 
 //Game

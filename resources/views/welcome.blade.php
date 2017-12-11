@@ -28,7 +28,7 @@
 		<a href='/profile'>Profile ({{$username}})</a>
       </div>
       <div className='nav-item'>
-        <a href='/' onclick='logout(); return false;'>Logout</a>
+        <a href="{{action('UserController@logout')}}" >Logout</a>
       </div>
       @endif
 

@@ -107,7 +107,7 @@ class UserController extends Controller
         Session::put('username', $user->name);
 
         Session::flash('flash_message', 'User Added');
-        return Redirect::view('/welcome')->with(compact('user'));
+        return Redirect('/')->with(compact('user'));
     }
 
     /**
@@ -215,6 +215,6 @@ class UserController extends Controller
 
     public function logout(){
         Session::flush();
-        return view('welcome');
+        return redirect('login');
     }
 }

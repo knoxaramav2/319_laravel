@@ -16,6 +16,9 @@ composer require predis/predis
 composer require guzzlehttp/guzzle
 composer update
 
+For guzzehttp:
+May need to uncomment php extention "extension=php_curl.dll" from php.ini on line 893
+
 //Should install Node Modules
 npm install
 npm run dev
@@ -23,8 +26,6 @@ npm run dev
 Might also need to run if it did not download:
 npm install react-router@2.8.1
 
-For guzzehttp:
-May need to uncomment php extention ext-curl * from php.ini
 
 To Run Chat Server:
 redis-server.exe
