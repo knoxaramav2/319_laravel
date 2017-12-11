@@ -135,6 +135,11 @@ class UserController extends Controller
     }
 
     public function profile(){
+
+        if (Session()->get('username') === null){
+            return Redirect('login');
+        }
+
         $user = User::where('name', '=', Session()->get('username'))->first();
         $games = Game::where('host_id', '=', $user->name)->get();
         $invites = array();

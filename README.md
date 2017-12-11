@@ -13,6 +13,7 @@ composer install
 
 //Needed
 composer require predis/predis
+composer require guzzlehttp/guzzle
 composer update
 
 //Should install Node Modules

@@ -13,6 +13,8 @@
 
 //use Session;
 
+use Mail\WelcomeLetter;
+
 Route::resource('users', 'UserController');
 Route::resource('games', 'GameController');
 
@@ -43,7 +45,7 @@ Route::get('/chat', 'chatController@index');
 Route::post('/sendmessage', 'chatController@sendMessage');
 Route::get('/writemessage', 'chatController@writemessage');
 
-
+Route::get('/testmail', 'MailController@sendMail');
 Route::get('/test', function () {
     return view('test', ['username' => Session()->get('username')]);
 });
