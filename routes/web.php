@@ -39,9 +39,13 @@ Route::get('/display-item', function () {
     return view('welcome');
 });
 
-Route::get('/chat', 'chatController@index');
-Route::post('/sendmessage', 'chatController@sendMessage');
-Route::get('/writemessage', 'chatController@writemessage');
+Route::get('/chat', function () {
+    return view('chat');
+});
+
+Route::get('socket', 'ChatController@index');
+Route::post('sendmessage', 'ChatController@sendMessage');
+Route::get('writemessage', 'ChatController@writemessage');
 
 
 Route::get('/test', function () {
