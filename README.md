@@ -11,6 +11,10 @@ In cmd, run these commands in the project folder:
 composer update
 composer install
 
+//Needed
+composer require predis/predis
+composer update
+
 //Should install Node Modules
 npm install
 npm run dev

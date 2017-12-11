@@ -39,4 +39,16 @@ Route::get('/display-item', function () {
     return view('welcome');
 });
 
+Route::get('/chat', 'chatController@index');
+Route::post('/sendmessage', 'chatController@sendMessage');
+Route::get('/writemessage', 'chatController@writemessage');
+
+
+Route::get('/test', function () {
+    return view('test', ['username' => Session()->get('username')]);
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::resource('items', 'ItemController');

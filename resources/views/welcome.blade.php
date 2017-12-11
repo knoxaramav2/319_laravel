@@ -17,6 +17,14 @@
             <div id="react"></div>
 			<script src="{{asset('js/app.js')}}" ></script>
         </div>
+		 @if(isset($username))
+	  <div className='nav-item'>
+		<a href='/profile'>Profile ({{$username}})</a>
+      </div>
+      <div className='nav-item'>
+        <a href='/' onclick='logout(); return false;'>Logout</a>
+      </div>
+      @endif
 
     </body>
 </html>

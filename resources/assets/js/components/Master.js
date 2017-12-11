@@ -9,16 +9,24 @@ class Master extends Component {
 	
     <div className="container">
 	  
+	<head>
+		<link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css"></link>
+		<link href="{{ URL::asset('css/site.css') }}" rel="stylesheet"></link>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	  
 	<div id='nav-bar' className='nav-bar'>
 	  <div className='nav-item'>
 	    <a href="/">Home</a>
 	  </div>
 	  <div className='nav-item'>
-		<a href='/login'>Login/Signup</a>
+        <a href='/login'>Login/Signup</a>
 	  </div>
-	  <div className='nav-item'>
-		  <a href='/profile'>Profile</a>
-	  </div>
+	  
+	 
+    
+	  
+	  
 	  <div className='nav-item'>
 		<a href='/help'>Help</a>
 	  </div>
@@ -28,12 +36,28 @@ class Master extends Component {
 	  <div className='nav-item'>
 		<a href="/display-item">Display Item</a>
 	  </div>
+	  <div className='nav-item'>
+		<a href="/chat">Chat</a>
+	  </div>
 	</div>
 	  
       <div>
         {this.props.children}
       </div>
-    </div>
+    
+	
+	
+	  <script type="text/javascript" src="{{ asset('js/logout.js') }}"></script>
+	
+
+    
+    TODO Use this views/partials/header partial from react
+</div>
+
+
+	
+	
+	
     )
   }
 }
