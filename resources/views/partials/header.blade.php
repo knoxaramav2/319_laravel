@@ -1,7 +1,7 @@
 <head>
-<link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+		<link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <link href="{{ URL::asset('css/site.css') }}" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <div id='nav-bar' class='nav-bar'>

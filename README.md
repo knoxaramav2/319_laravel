@@ -23,6 +23,10 @@ npm run dev
 Might also need to run if it did not download:
 npm install react-router@2.8.1
 
+To Run Chat Server:
+redis-server.exe
+node server.js
+
 Helpful Commands:
 npm run watch - will automatically update app.js file
 

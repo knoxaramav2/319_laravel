@@ -9,11 +9,11 @@ class Master extends Component {
 	
     <div className="container">
 	  
-	<head>
+	
 		<link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css"></link>
 		<link href="{{ URL::asset('css/site.css') }}" rel="stylesheet"></link>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	</head>
+	
 	  
 	<div id='nav-bar' className='nav-bar'>
 	  <div className='nav-item'>
@@ -22,11 +22,7 @@ class Master extends Component {
 	  <div className='nav-item'>
         <a href='/login'>Login/Signup</a>
 	  </div>
-	  
-	 
-    
-	  
-	  
+	
 	  <div className='nav-item'>
 		<a href='/help'>Help</a>
 	  </div>
@@ -37,7 +33,13 @@ class Master extends Component {
 		<a href="/display-item">Display Item</a>
 	  </div>
 	  <div className='nav-item'>
-		<a href="/chat">Chat</a>
+		<a href="/chat">Chat 1</a>
+	  </div>
+	  <div className='nav-item'>
+		<a href="/writemessage">Chat 2</a>
+	  </div>
+	  <div className='nav-item'>
+		<a href="/test">Chat 3</a>
 	  </div>
 	</div>
 	  
@@ -49,9 +51,6 @@ class Master extends Component {
 	
 	  <script type="text/javascript" src="{{ asset('js/logout.js') }}"></script>
 	
-
-    
-    TODO Use this views/partials/header partial from react
 </div>
 
 

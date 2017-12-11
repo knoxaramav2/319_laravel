@@ -10,14 +10,23 @@
 		<title>Go Fish!</title>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css"></link>
+		<link href="{{ URL::asset('css/site.css') }}" rel="stylesheet"></link>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-        @include('partials/header')
+        
         <div>
             <div id="react"></div>
 			<script src="{{asset('js/app.js')}}" ></script>
         </div>
-		 @if(isset($username))
+		
+		
+		
+	  
+	  <div class="container">
+	   @if(isset($username))
 	  <div className='nav-item'>
 		<a href='/profile'>Profile ({{$username}})</a>
       </div>
@@ -26,5 +35,7 @@
       </div>
       @endif
 
+	  
+	  </div>
     </body>
 </html>

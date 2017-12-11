@@ -28,12 +28,19 @@ import Chat from './components/Chat';
 
 render(
   <Router history={browserHistory}>
-      <Route path="/*" component={Master} >
+      <Route path="/" component={Master} >
         <Route path="/add-item" component={CreateItem} />
 		<Route path="/display-item" component={DisplayItem} />
 		<Route path="/edit/:id" component={EditItem} />
-		<Route path="/chat" component={Chat} />
+		<Route path="/home" />
+		<Route path="/profile" />
+		<Route path="/help" />
+		<Route path="/login" />
+		<Route path="/chat" />
+		<Route path="/writemessage"  />
+		<Route path="/test"  />
+		<Route path="/socket" />
       </Route>
     </Router>,
  document.getElementById('react'));
-		
+ 
