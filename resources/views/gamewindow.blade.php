@@ -24,17 +24,19 @@
 	  
 	  <div class="container">
         <div class='gamezone_info'>
-            <span class='gamezone_info_item'>Host: </span>
-            <span class='gamezone_info_item'>Client: </span>
-            <span class='gamezone_info_item'>Game: </span>
+            <span class='gamezone_info_item'>Host: {{$game->host_id}}</span>
+            <span class='gamezone_info_item'>Client: {{$game->client_id}}</span>
+            <span class='gamezone_info_item'>Game: {{$game->name}}</span>
             <br>
             <span class='gamezone_info_item' id='game_state'>| </span>
         </div>
 
         <div class='gamezone'>
-
+            <h2>Your Hand</h2>
         </div>
-
+        <div class='gamezone'>
+            <h2>Your Hand</h2>
+        </div>
 	  
 	  </div>
     </body>

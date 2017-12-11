@@ -138,7 +138,7 @@
     }
 
     function continueGame(gameId){
-
+        location.href='/games?game_id='+gameId;
     }
 
 </script>

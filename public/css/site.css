@@ -26,6 +26,7 @@
     background-color:darkgray;
     height: 100%;
     height: -webkit-fill-available;
+    padding: 20px;
 }
 
 .gamezone_info{
@@ -37,6 +38,10 @@
 .gamezone_info_item{
     margin-right: 20px;
     font-size: x-large;
+}
+
+.gamezone h2{
+    text-align: center;
 }
 
 /*spacing*/

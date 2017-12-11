@@ -77,6 +77,12 @@ class GameController extends Controller
             'client_id' => $client->id
         ]);
 
+        $state = TempState::create([
+            'host_hand' => '',
+            'client_hand' => '',
+            'deck' => ''
+        ]);
+
         return view('profile');
     }
 
@@ -96,7 +102,10 @@ class GameController extends Controller
      */
     public function show($id)
     {
-        
+        $game = Game::where('id', '=', $id)->first();
+        //return ($game);
+
+        return view('gamewindow')->with(compact('game'));
     }
 
     /**
