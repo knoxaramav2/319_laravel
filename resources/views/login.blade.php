@@ -1,3 +1,5 @@
+<!-- login.blade.php -->
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>

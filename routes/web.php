@@ -26,6 +26,7 @@ Route::get('/help', function(){
     return view('help', ['username' => Session()->get('username')]);
 });
 
+//Route::get('/login', 'UserController@loginView');
 Route::get('/login', 'UserController@loginView');
 Route::post('/login', 'UserController@loginAs');
 
@@ -49,7 +50,7 @@ Route::get('socket', 'ChatController@index');
 Route::post('sendmessage', 'ChatController@sendMessage');
 Route::get('writemessage', 'ChatController@writemessage');
 
-Route::get('/testmail', 'MailController@sendMail');
+//Route::get('/testmail', 'MailController@sendMail');
 
 Route::get('/test', function () {
     return view('test', ['username' => Session()->get('username')]);

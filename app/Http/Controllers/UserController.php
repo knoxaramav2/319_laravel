@@ -151,6 +151,22 @@ class UserController extends Controller
 
         //Get user
 
+        # Include the Autoloader (see "Libraries" for install instructions)
+        require_once(__DIR__.'/../../../vendor/autoload.php');
+        
+        
+            # Instantiate the client.
+            $mgClient = new \Mailgun\Mailgun('key-726c0401e893e106e9e399e4f4127135');
+            $domain = "sandbox25a34ee8930348e6a5f2f669b6feb845.mailgun.org";
+        
+            # Make the call to the client.
+            $result = $mgClient->sendMessage("$domain",
+                    array('from'    => 'Mailgun Sandbox <postmaster@sandbox25a34ee8930348e6a5f2f669b6feb845.mailgun.org>',
+                            'to'      => 'Woodrow <zewegut@letsmail9.com>',
+                            'subject' => 'Hello Woodrow',
+                            'text'    => 'TEST MESSAGE - LOGIN',
+                            'view'    => 'help'));
+                    
         return view('login');
     }
 

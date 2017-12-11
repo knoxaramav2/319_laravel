@@ -20,10 +20,7 @@
         <div>
             <div id="react"></div>
 			<script src="{{asset('js/app.js')}}" ></script>
-        </div>
-		
-		
-		
+        </div>	
 	  
 	  <div class="container">
 	   @if(isset($username))
