@@ -24,3 +24,4 @@ Route::get('/testmail', function(){
 Route::get('/logout', 'UserController@logout');
 
 //Game API routes
+Route::get('/acceptInvite', 'GameController@acceptInvite');

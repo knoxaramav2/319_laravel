@@ -80,6 +80,14 @@ class GameController extends Controller
         return view('profile');
     }
 
+    public function acceptInvite()
+    {
+        $game = Game::where('id', '=', Input::get('game_id'))->first();
+        $game->client_accepted = '1';
+        $game->save();
+
+    }
+
     /**
      * Display the specified resource.
      *

@@ -54,7 +54,7 @@
                 <tr class='game_list_item'>
                     <td>{{$game->name}}</td>
                     <td>{{$game->created_at}}</td>
-                    <td><button>Continue</button></td>
+                    <td><button onclick='continueGame({{$game->id}});'>Continue</button></td>
                 </tr>
                 @endforeach
             </table>
@@ -71,7 +71,7 @@
                 <tr class='game_list_item'>
                     <td>{{$game->host_id}}</td>
                     <td>{{$game->created_at}}</td>
-                    <td><button>Continue</button></td>
+                    <td><button onclick='continueGame({{$game->id}});'>Continue</button></td>
                 </tr>
                 @endforeach
                 </table>
@@ -89,7 +89,7 @@
                 <tr class='game_list_item'>
                     <td>{{$game->host_id}}</td>
                     <td>{{$game->created_at}}</td>
-                    <td><button>Join</button></td>
+                    <td><button onclick='acceptInvitation({{$game->id}});'>Join</button></td>
                 </tr>
                 @endforeach
                 </table>
@@ -124,3 +124,21 @@
         </div>
     </body>
 </html>
+
+<script>
+
+    function acceptInvitation(gameId){
+        $.get(
+            'api/acceptInvite',
+            {'game_id' : gameId},
+            function(response){
+                console.log(response);
+                location.href='/profile';
+        });
+    }
+
+    function continueGame(gameId){
+
+    }
+
+</script>
