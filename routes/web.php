@@ -30,7 +30,6 @@ Route::get('/help', function(){
 Route::get('/login', 'UserController@loginView');
 Route::post('/login', 'UserController@loginAs');
 
-Route::get('/logout', 'UserController@logout');
 Route::get('/profile', 'UserController@profile');
 
 

@@ -1,6 +1,6 @@
 function logout(){
         $.ajax({
-            url: '/logout',
+            url: '/api/logout',
             type: 'GET',
             success: function(){
                 document.location.href = '/';

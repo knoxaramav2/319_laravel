@@ -17,8 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/testmail', 'MailController@sendMail');
-/*
 Route::get('/testmail', function(){
-    return ('Test');}
-);*/
+    return view('emails/welcomeMail');
+});
+Route::get('/logout', 'UserController@logout');
