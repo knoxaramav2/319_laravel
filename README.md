@@ -23,6 +23,9 @@ npm run dev
 Might also need to run if it did not download:
 npm install react-router@2.8.1
 
+For guzzehttp:
+May need to uncomment php extention ext-curl * from php.ini
+
 To Run Chat Server:
 redis-server.exe
 node server.js
@@ -30,5 +33,4 @@ node server.js
 Helpful Commands:
 npm run watch - will automatically update app.js file
 
-Helpful Tutorial
-https://appdividend.com/2017/08/31/laravel-5-5-reactjs-tutorial/
+
