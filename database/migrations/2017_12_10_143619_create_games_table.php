@@ -22,6 +22,8 @@ class CreateGamesTable extends Migration
             $table->string('winner');
             $table->timestamps();
 
+            
+
             $table->foreign('host_id')->references('id')->on('user');
             $table->foreign('client_id')->references('id')->on('user');
         });

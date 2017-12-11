@@ -23,14 +23,17 @@
         </div>	
 	  
 	  <div class="container">
-	   @if(isset($username))
-	  <div className='nav-item'>
-		<a href='/profile'>Profile ({{$username}})</a>
-      </div>
-      <div className='nav-item'>
-        <a href='/' onclick='logout(); return false;'>Logout</a>
-      </div>
-      @endif
+        <div class='gamezone_info'>
+            <span class='gamezone_info_item'>Host: </span>
+            <span class='gamezone_info_item'>Client: </span>
+            <span class='gamezone_info_item'>Game: </span>
+            <br>
+            <span class='gamezone_info_item' id='game_state'>| </span>
+        </div>
+
+        <div class='gamezone'>
+
+        </div>
 
 	  
 	  </div>

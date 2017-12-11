@@ -28,6 +28,9 @@
                     <span>Email: {{$user->email}}}</span>
                 </div>
                 <div>
+                    <span>Id: {{$user->id}}</span>
+                </div>
+                <div>
                     <h3>Game Stats</h3>
                 </div>
                 <div>
@@ -40,11 +43,6 @@
             <div>
                 <h3>Manage Games</h3>
             </div>
-            @foreach($errors->all() as $error)
-            <div class='error'>
-                {{$error}}
-            </div>
-            @endforeach
 
             <table class='game_list'>
                 <tr class='game_list_item'>
@@ -52,12 +50,32 @@
                     <th>Created</th>
                     <th>Continue</th>
                 </tr>
-                @foreach($games as $game)
+                @foreach($hosted_games as $game)
                 <tr class='game_list_item'>
-
+                    <td>{{$game->name}}</td>
+                    <td>{{$game->created_at}}</td>
+                    <td><button>Continue</button></td>
                 </tr>
                 @endforeach
             </table>
+
+            <div>
+                <h3>Joined Games</h3>
+                <table class='game_list'>
+                <tr class='game_list_item'>
+                    <th>Creator</th>
+                    <th>Created</th>
+                    <th>Continue</th>
+                </tr>
+                @foreach($joined_games as $game)
+                <tr class='game_list_item'>
+                    <td>{{$game->host_id}}</td>
+                    <td>{{$game->created_at}}</td>
+                    <td><button>Continue</button></td>
+                </tr>
+                @endforeach
+                </table>
+            </div>
 
             <div>
                 <h3>Game Invitations</h3>
@@ -69,7 +87,9 @@
                 </tr>
                 @foreach($invites as $game)
                 <tr class='game_list_item'>
-
+                    <td>{{$game->host_id}}</td>
+                    <td>{{$game->created_at}}</td>
+                    <td><button>Join</button></td>
                 </tr>
                 @endforeach
                 </table>
@@ -78,6 +98,12 @@
             <div>
                 <h3>Create new game</h3>
             </div>
+
+            @foreach($errors->all() as $error)
+            <div class='error'>
+                {{$error}}
+            </div>
+            @endforeach
 
             <form method="POST" id='game_form' action="games">
                 <div>

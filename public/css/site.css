@@ -22,6 +22,23 @@
     color:red;
 }
 
+.gamezone{
+    background-color:darkgray;
+    height: 100%;
+    height: -webkit-fill-available;
+}
+
+.gamezone_info{
+    background-color: darkgrey;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.gamezone_info_item{
+    margin-right: 20px;
+    font-size: x-large;
+}
+
 /*spacing*/
 .spacer{
     margin: 50px 5px;

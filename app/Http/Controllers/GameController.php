@@ -59,14 +59,25 @@ class GameController extends Controller
         $validator = Validator::make(Input::all(), $validate_rules, $messages);
 
         $client = User::where('name', '=', Input::get('client_name'))->first();
+        $host = User::where('name', '=', Session()->get('username'))->first();
         
         if (isset($client) == false){
-            $validator->errors()->add('client_name', 'User not found');
+            $validator->getMessageBag()->add('client_name', 'User not found');
+            return Redirect::back()->withErrors($validator)->withInput();
         }
 
         if ($validator->fails()){
             return Redirect::back()->withErrors($validator)->withInput();
         }
+
+        //get user information
+        $game = Game::create([
+            'name' => $request->get('game_name'),
+            'host_id' => $host->id,
+            'client_id' => $client->id
+        ]);
+
+        return view('profile');
     }
 
     /**

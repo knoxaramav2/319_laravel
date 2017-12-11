@@ -162,10 +162,19 @@ class UserController extends Controller
         }
 
         $user = User::where('name', '=', Session()->get('username'))->first();
-        $games = Game::where('host_id', '=', $user->name)->get();
-        $invites = array();
+        $hosted_games = Game::where('host_id', '=', $user->id)->get();
+        $joined_games = Game::where([
+            ['client_id', '=', $user->id],
+            ['client_accepted', '=', '1']
+            ])->get();
+        $invites = Game::where([
+            ['client_id', '=', $user->id],
+            ['client_accepted', '=', '0']
+            ])->get();
 
-        return view('profile', ['games' => $games, 'invites' => $invites])->with(compact('user'));
+        //return ($hosted_games);
+
+        return view('profile', ['hosted_games' => $hosted_games, 'joined_games' => $joined_games , 'invites' => $invites])->with(compact('user'));
     }
 
     public function loginView(){
