@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
+//User API routes
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -21,3 +22,5 @@ Route::get('/testmail', function(){
     return view('emails/welcomeMail');
 });
 Route::get('/logout', 'UserController@logout');
+
+//Game API routes

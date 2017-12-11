@@ -59,3 +59,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('items', 'ItemController');
+
+//Game

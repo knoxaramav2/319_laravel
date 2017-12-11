@@ -41,6 +41,7 @@ render(
 		<Route path="/test"  />
 		<Route path="/socket" />
 		<Route path="/testmail"  />
+		<Route path="/games"  />
       </Route>
     </Router>,
  document.getElementById('react'));

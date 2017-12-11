@@ -24,7 +24,9 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        //pull game data
+
+        return view('gamewindow');
     }
 
     /**
@@ -75,7 +77,7 @@ class GameController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
