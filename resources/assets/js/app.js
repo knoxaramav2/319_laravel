@@ -40,6 +40,7 @@ render(
 		<Route path="/writemessage"  />
 		<Route path="/test"  />
 		<Route path="/socket" />
+		<Route path="/testmail"  />
       </Route>
     </Router>,
  document.getElementById('react'));

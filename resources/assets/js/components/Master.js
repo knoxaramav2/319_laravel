@@ -41,6 +41,9 @@ class Master extends Component {
 	  <div className='nav-item'>
 		<a href="/test">Chat 3</a>
 	  </div>
+	  <div className='nav-item'>
+		<a href="/testmail">Mail</a>
+	  </div>
 	</div>
 	  
       <div>
