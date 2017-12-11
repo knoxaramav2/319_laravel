@@ -13461,11 +13461,18 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
   { history: __WEBPACK_IMPORTED_MODULE_2_react_router__["browserHistory"] },
   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     __WEBPACK_IMPORTED_MODULE_2_react_router__["Route"],
-    { path: '/*', component: __WEBPACK_IMPORTED_MODULE_3__components_Master__["a" /* default */] },
+    { path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_Master__["a" /* default */] },
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/add-item', component: __WEBPACK_IMPORTED_MODULE_4__components_CreateItem__["a" /* default */] }),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/display-item', component: __WEBPACK_IMPORTED_MODULE_5__components_DisplayItem__["a" /* default */] }),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/edit/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_EditItem__["a" /* default */] }),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/chat', component: __WEBPACK_IMPORTED_MODULE_7__components_Chat__["a" /* default */] })
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/home' }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/profile' }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/help' }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/login' }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/chat' }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/writemessage' }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/test' }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router__["Route"], { path: '/socket' })
   )
 ), document.getElementById('react'));
 
@@ -59174,13 +59181,9 @@ var Master = function (_Component) {
 			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'div',
 				{ className: 'container' },
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					'head',
-					null,
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: '{{asset(\'css/app.css\')}}', rel: 'stylesheet', type: 'text/css' }),
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: '{{ URL::asset(\'css/site.css\') }}', rel: 'stylesheet' }),
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' })
-				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: '{{asset(\'css/app.css\')}}', rel: 'stylesheet', type: 'text/css' }),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: '{{ URL::asset(\'css/site.css\') }}', rel: 'stylesheet' }),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'div',
 					{ id: 'nav-bar', className: 'nav-bar' },
@@ -59262,8 +59265,7 @@ var Master = function (_Component) {
 					null,
 					this.props.children
 				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: '{{ asset(\'js/logout.js\') }}' }),
-				'TODO Use this views/partials/header partial from react'
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: '{{ asset(\'js/logout.js\') }}' })
 			);
 		}
 	}]);
@@ -59823,7 +59825,7 @@ var Chat = function (_Component) {
   return Chat;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Chat);
+/* unused harmony default export */ var _unused_webpack_default_export = (Chat);
 
 /***/ }),
 /* 286 */

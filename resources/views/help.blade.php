@@ -11,7 +11,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-        @include('partials/header')
+        
+		<div id="react"></div>
         <script src="{{asset('js/app.js')}}" ></script>
 		
         <div class='blog'>

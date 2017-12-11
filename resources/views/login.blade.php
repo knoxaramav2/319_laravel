@@ -12,13 +12,18 @@
     </head>
     <body>
 
+	<div class="container">
+	
         @foreach($errors->all() as $error)
             <div class='error'>
             {{$error}}
             </div>
         @endforeach
 
-        @include('partials/header')
+        
+            <div id="react"></div>
+			<script src="{{asset('js/app.js')}}" ></script>
+        
         <script src="{{asset('js/app.js')}}" ></script>
 
         @if(isset($user))
@@ -76,7 +81,7 @@
 
         @endif
 
-        
+    </div>
 		
     </body>
 </html>

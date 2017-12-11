@@ -14,12 +14,15 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js"></script>
     </head>
+	
+	
     <body>
 		<div>
             <div id="react"></div>
 			<script src="{{asset('js/app.js')}}" ></script>
         </div>
-		<div class="container">
+		
+		<div id="chat" class="container">
 		
 		   <h1>Game Chat</h1>
 
@@ -31,30 +34,10 @@
 			<button>Send</button>
 		  </form>
         </div>
+		
+		
 		<script type="text/javascript" src="{{ asset('js/chat.js') }}"></script>
 
-		
-		<br/>
-		
-		 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2" >
-              <div id="messages" ></div>
-            </div>
-        </div>
-    </div>
-    <script>
-        var socket = io.connect('http://localhost:8890');
-        socket.on('message', function (data) {
-            $( "#messages" ).append( "<p>"+data+"</p>" );
-          });
-    </script>
-		
-		
 		
     </body>
 </html>
