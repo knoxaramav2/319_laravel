@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Game;
+use App\TempState;
 
 use Illuminate\Http\Request;
 use Session;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Input;
 use Redirect;
 use Hash;
 use Log;
+
 
 class GameController extends Controller
 {
@@ -25,8 +27,8 @@ class GameController extends Controller
     public function index()
     {
         //pull game data
-
-        return view('gamewindow');
+        $game = Game::where('id', '=', Input::get('game_id'))->first();
+        return view('gamewindow')->with(compact('game'));
     }
 
     /**
@@ -103,7 +105,6 @@ class GameController extends Controller
     public function show($id)
     {
         $game = Game::where('id', '=', $id)->first();
-        //return ($game);
 
         return view('gamewindow')->with(compact('game'));
     }
