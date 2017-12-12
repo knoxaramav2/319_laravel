@@ -47,7 +47,6 @@ Route::get('socket', 'ChatController@index');
 Route::post('sendmessage', 'ChatController@sendMessage');
 Route::get('writemessage', 'ChatController@writemessage');
 
-//Route::get('/testmail', 'MailController@sendMail');
 
 Route::get('/test', function () {
     return view('test', ['username' => Session()->get('username')]);
