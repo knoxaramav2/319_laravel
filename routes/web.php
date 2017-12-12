@@ -55,6 +55,9 @@ Route::get('/test', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+ Route::get('message/poll', 'MessageController@poll');
+ Route::resource('message', 'MessageController');
+
 
 Route::resource('items', 'ItemController');
 Route::resource('users', 'UserController');

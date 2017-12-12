@@ -26,23 +26,49 @@ import DisplayItem from './components/DisplayItem';
 import EditItem from './components/EditItem';
 import Chat from './components/Chat';
 
-render(
-  <Router history={browserHistory}>
-      <Route path="/" component={Master} >
-        <Route path="/add-item" component={CreateItem} />
-		<Route path="/display-item" component={DisplayItem} />
-		<Route path="/edit/:id" component={EditItem} />
-		<Route path="/home" />
-		<Route path="/profile" />
-		<Route path="/help" />
-		<Route path="/login" />
-		<Route path="/chat" />
-		<Route path="/writemessage"  />
-		<Route path="/test"  />
-		<Route path="/socket" />
-		<Route path="/testmail"  />
-		<Route path="/games"  />
-      </Route>
-    </Router>,
- document.getElementById('react'));
+
+import ReactDOM from "react-dom";
+import Messages from "./components/Messages";
+import { Provider } from 'react-redux'; 
+import configureStore from "./components/configureStore";
+import {postMessage, pollMessages, loadMessages} from "./components/MessageActions";
+
+
+global.jQuery = require('jquery');
+require('bootstrap');
+
+const store = configureStore();
+const $react = document.getElementById("react");
+
+//store.dispatch(loadMessages());
+// var startPoll = function() {
+//     setTimeout(() => store.dispatch(pollMessages), 1500);
+// }
+// startPoll();
+var poll = function () {
+    store.dispatch(pollMessages());
+};
+setInterval(poll, 1000);
+
+ReactDOM.render(
+        <Router history={browserHistory}>
+		  <Route path="/" component={Master} >
+			<Route path="/add-item" component={CreateItem} />
+			<Route path="/display-item" component={DisplayItem} />
+			<Route path="/edit/:id" component={EditItem} />
+			<Route path="/home" />
+			<Route path="/profile" />
+			<Route path="/help" />
+			<Route path="/login" />
+			<Route path="/chat" component={Chat}/>
+			<Route path="/messages" component={Messages}/>
+			<Route path="/writemessage"  />
+			<Route path="/test" />
+			<Route path="/socket" />
+			<Route path="/testmail"  />
+			<Route path="/games"  />
+		  </Route>
+        </Router>
+    , $react);
+	
  

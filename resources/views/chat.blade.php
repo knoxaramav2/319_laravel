@@ -1,5 +1,3 @@
-<!-- welcome.blade.php -->
-
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -11,33 +9,22 @@
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <link href="{{ URL::asset('css/site.css') }}" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js"></script>
     </head>
-	
-	
-    <body>
-		<div>
-            <div id="react"></div>
-			<script src="{{asset('js/app.js')}}" ></script>
-        </div>
-		
-		<div id="chat" class="container">
-		
-		   <h1>Game Chat</h1>
+<body>
 
-		  <ul id="messages">
-			<li v-repeat="message: messages">@{{message}}</li>
-		  </ul>
-		  <form v-on="submit: send">
-			<input v-model="message"></input>
-			<button>Send</button>
-		  </form>
+    <div >
+        <div class="container">
+            <div id="react" class="col-md-12">
+                    @yield('content')
+            </div>
         </div>
-		
-		
-		<script type="text/javascript" src="{{ asset('js/chat.js') }}"></script>
+    </div>
+	
 
-		
-    </body>
+    <!-- JavaScripts -->
+  <script src="{{ asset('js/app.js') }}"></script>
+   <script>
+    //const csrf_token = "{{ csrf_token() }}";
+    </script>
+</body>
 </html>
