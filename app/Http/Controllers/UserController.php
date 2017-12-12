@@ -204,7 +204,7 @@ class UserController extends Controller
 
         $user = User::where('name', '=', Input::get('name'))->first();
 
-        if (Hash::check(Input::get('password'), $user->password)){
+        if (!Hash::check(Input::get('password'), $user->password)){
             return view('error', ['err_msg' => 'Password does not match user']);
         }
 
